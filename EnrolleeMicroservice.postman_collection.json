@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "a2c505eb-9ee2-4ab8-80bd-c4e499d912ca",
+		"name": "EnrolleeMicroservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enrollee",
+			"item": [
+				{
+					"name": "Save Enrollee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"activationStatus\": true,\r\n    \"dob\": \"2020-09-10\",\r\n    \"phoneNumber\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Enrollee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"John Doe\",\r\n    \"activationStatus\": true,\r\n    \"dob\": \"2020-09-10\",\r\n    \"phoneNumber\": \"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Enrollee With Dependents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"activationStatus\": true,\r\n    \"dob\": \"1990-09-10\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"dependents\": [\r\n        {\r\n            \"name\": \"Marry Jane\",\r\n            \"dob\": \"2010-02-01\"\r\n        },\r\n        {\r\n            \"name\": \"Jane Doe\",\r\n            \"dob\": \"2010-07-01\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Multiple Enrollees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"John Doe\",\r\n        \"activationStatus\": true,\r\n        \"dob\": \"2020-09-10\",\r\n        \"phoneNumber\": \"1234567890\"\r\n    },\r\n    {\r\n        \"name\": \"Jane Doe\",\r\n        \"activationStatus\": false,\r\n        \"dob\": \"2015-09-10\",\r\n        \"phoneNumber\": \"1234567890\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Enrollee By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Enrollees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Enrollee By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/enrollee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"enrollee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dependent",
+			"item": [
+				{
+					"name": "Save Dependent Under Enrollee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Johny Doe\",\r\n    \"dob\": \"2020-09-10\",\r\n    \"enrollee\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Dependent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Johny Chan\",\r\n    \"dob\": \"2020-09-10\",\r\n    \"enrollee\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Multiple Dependents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Chadwick Boseman\",\r\n        \"dob\": \"2020-09-10\",\r\n        \"enrollee\": {\r\n            \"id\": 2\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Merry Queen\",\r\n        \"dob\": \"2020-09-10\",\r\n        \"enrollee\": {\r\n            \"id\": 2\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dependent By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Dependents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Dependent By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/enrollment/v1/dependent/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"enrollment",
+								"v1",
+								"dependent",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e0ac56a7-58bb-49dd-81f0-1b484f84ce8b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ce1e8cae-8aa5-4afd-a330-a97252d54510",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
